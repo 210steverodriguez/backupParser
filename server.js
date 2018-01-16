@@ -18,6 +18,17 @@ smb2Client.readFile('logs\\U\\replication.txt', {encoding: 'utf8'}, function(err
   data = data.split('\r\n');
   console.log(data);
 
+  for(var i = 0; i < data.length; i++){
+    if(data[i].indexOf("REPLICATION LIST")){
+      output.push("ReplicationList\n")
+    }
+    //condition for start of customer
+      //check through each asset if the data is recent for last backup added
+      //until end of customer line
+
+
+  }
+
 });
 //
 // smb2Client.exists('logs\\replication.txt', function (err, exists) {
